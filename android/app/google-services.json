@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "724502878457",
+    "project_id": "messhub-b7a30",
+    "storage_bucket": "messhub-b7a30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724502878457:android:c1aacfdf7d5944144dea28",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9VSZMj9sPUJ0jnFw2uhCxfBVV8MvmdzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
