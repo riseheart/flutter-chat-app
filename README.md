@@ -6,6 +6,7 @@ Part of my "social network" application, because I haven't finished developing i
 
 ## Screenshot
 
+![login](https://github.com/riseheart/flutter-chat-app/assets/103646759/d7c905cc-6369-4424-85b5-0aa9375907a5){width=50%}
 
 ## Getting Started
 
