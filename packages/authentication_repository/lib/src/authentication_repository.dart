@@ -285,6 +285,20 @@ class AuthenticationRepository {
       throw LogOutFailure();
     }
   }
+
+  Future<void> deleteAccount() async {
+    try {
+      final currentUser = _firebaseAuth.currentUser;
+      if (currentUser != null) {
+        await _firestoreService.deleteUserInfoFromFirestore(
+            userId: currentUser.uid);
+        await currentUser.delete();
+      }
+      // await currentUser?.reauthenticateWithCredential(credential);
+    } catch (_) {
+      throw LogOutFailure();
+    }
+  }
 }
 
 extension on firebase_auth.User {

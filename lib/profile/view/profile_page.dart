@@ -1,3 +1,4 @@
+import 'package:authentication_repository/authentication_repository.dart';
 import 'package:chatapp/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +68,42 @@ class ProfilePage extends StatelessWidget {
               icon: const Icon(Icons.exit_to_app),
               label: const Text('LOGOUT'),
               style: ElevatedButton.styleFrom(),
-            )
+            ),
+            const SizedBox(height: 8),
+            ElevatedButton.icon(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text('Delete Account'),
+                      content: const Text(
+                          'Are you sure you want to delete your account?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Cancel'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            context
+                                .read<AuthenticationRepository>()
+                                .deleteAccount();
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Delete'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              icon: const Icon(Icons.delete),
+              label: const Text('DELETE ACCOUNT'),
+              style: ElevatedButton.styleFrom(),
+            ),
           ],
         ),
       ),

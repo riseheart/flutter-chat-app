@@ -57,4 +57,13 @@ class ChatService {
         .limit(20)
         .snapshots();
   }
+
+  Future<void> deleteMessage(String messageId) async {
+    try {
+      await _firestore.collection('messages').doc(messageId).delete();
+    } catch (e) {
+      print('Error deleting message: $e');
+      rethrow;
+    }
+  }
 }

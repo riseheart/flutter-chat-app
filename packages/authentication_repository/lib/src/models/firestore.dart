@@ -20,4 +20,13 @@ class FirestoreService {
       throw Exception('Failed to save user info to Firestore: $e');
     }
   }
+
+  Future<void> deleteUserInfoFromFirestore({required String userId}) async {
+    try {
+      await _firestore.collection('users').doc(userId).delete();
+    } catch (e) {
+      print('Error deleting user info from Firestore: $e');
+      rethrow;
+    }
+  }
 }
